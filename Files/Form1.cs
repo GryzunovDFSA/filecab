@@ -33,6 +33,10 @@ namespace Files
                 con.Close();
 
                 loadDataDocument();
+
+                textBox1.Text = "";
+                textBox2.Text = "";
+                comboBox1.Text = "";
             }
 
         }
@@ -65,6 +69,10 @@ namespace Files
             DataTable tbl1 = new DataTable();
             NpgsqlDataAdapter da1 = new NpgsqlDataAdapter(sql, con);
             da1.Fill(tbl1);
+            DataRow dr1 = tbl1.NewRow();
+            dr1["employee_id"] = 0;
+            dr1["surname"] = "";
+            tbl1.Rows.Add(dr1);
             comboBox1.DataSource = tbl1;
             comboBox1.DisplayMember = "surname";
             comboBox1.ValueMember = "employee_id";
@@ -75,6 +83,10 @@ namespace Files
             DataTable tbl4 = new DataTable();
             NpgsqlDataAdapter da4 = new NpgsqlDataAdapter(sql, con);
             da4.Fill(tbl4);
+            DataRow dr2 = tbl4.NewRow();
+            dr2["employee_id"] = 0;
+            dr2["surname"] = "";
+            tbl4.Rows.Add(dr2);
             comboBox3.DataSource = tbl4;
             comboBox3.DisplayMember = "surname";
             comboBox3.ValueMember = "employee_id";
@@ -86,6 +98,10 @@ namespace Files
             DataTable tbl2 = new DataTable();
             NpgsqlDataAdapter da2 = new NpgsqlDataAdapter(sql, con);
             da2.Fill(tbl2);
+            DataRow dr3 = tbl2.NewRow();
+            dr3["class_id"] = 0;
+            dr3["class_name"] = "";
+            tbl2.Rows.Add(dr3);
             comboBox2.DataSource = tbl2;
             comboBox2.DisplayMember = "class_name";
             comboBox2.ValueMember = "class_id";
@@ -97,6 +113,10 @@ namespace Files
             DataTable tbl3 = new DataTable();
             NpgsqlDataAdapter da3 = new NpgsqlDataAdapter(sql, con);
             da3.Fill(tbl3);
+            DataRow dr4 = tbl3.NewRow();
+            dr4["document_id"] = 0;
+            dr4["document_id"] = 0;
+            tbl3.Rows.Add(dr4);
             comboBox4.DataSource = tbl3;
             comboBox4.DisplayMember = "document_id";
             comboBox4.ValueMember = "document_id";
@@ -128,6 +148,10 @@ namespace Files
                     cmd.ExecuteNonQuery();
                     con.Close();
                     loadDataDocument();
+
+                    textBox1.Text = "";
+                    textBox2.Text = "";
+                    comboBox1.Text = "";
                 }
             }
         }
@@ -225,6 +249,12 @@ namespace Files
                 con.Close();
 
                 loadDataCard();
+
+                textBox3.Text = "";
+                dateTimePicker1.Text = "";
+                comboBox2.Text = "";
+                comboBox3.Text = "";
+                comboBox4.Text = "";
             }
         }
 
@@ -249,6 +279,12 @@ namespace Files
                     con.Close();
 
                     loadDataCard();
+
+                    textBox3.Text = "";
+                    dateTimePicker1.Text = "";
+                    comboBox2.Text = "";
+                    comboBox3.Text = "";
+                    comboBox4.Text = "0";
                 }
             }
         }
